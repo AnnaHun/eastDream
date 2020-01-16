@@ -31,4 +31,7 @@ public class loginServiceImpl implements loginService {
         return user;
     }
 
+    public String delUsers(User user) {
+        return "failed";
+    }
 }
