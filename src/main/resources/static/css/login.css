@@ -1,0 +1,23 @@
+.mod-new-login{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: url(../picture/login.jpg);
+	background-size: cover;
+}
+
+.mod-new-content-form{
+	margin-bottom: 40px;
+	position: relative;
+	z-index: 19;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eastdream.eastdream.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.eastdream.eastdream.dao.User">
+    <result column="uuid" jdbcType="VARCHAR" property="uuid" />
+    <result column="logName" jdbcType="VARCHAR" property="logName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+  </resultMap>
+  <insert id="insert" parameterType="com.eastdream.eastdream.dao.User">
+    insert into user (uuid, logName, `password`, 
+      userName, phone, createTime, 
+      `level`)
+    values (#{uuid,jdbcType=VARCHAR}, #{logName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{userName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{level,jdbcType=INTEGER})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select uuid, logName, `password`, userName, phone, createTime, `level`
+    from user
+  </select>
+  <select id="selectUser" resultMap="BaseResultMap">
+    select * from user a where a.logName = #{logName,jdbcType=VARCHAR} and a.password = #{password,jdbcType=VARCHAR}
+  </select>
+</mapper>
