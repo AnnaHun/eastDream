@@ -20,13 +20,18 @@ public class loginServiceImpl implements loginService {
 
     /**
      * 通过用户名密码获取用户
+     *
      * @param logName
      * @param password
      * @return
      */
     @Override
     public User getUser(String logName, String password) {
-        User user = userMapper.selectUser(logName,password);
+        User user = userMapper.selectUser(logName, password);
         return user;
+    }
+
+    public String delUsers(User user) {
+        return "success";
     }
 }
