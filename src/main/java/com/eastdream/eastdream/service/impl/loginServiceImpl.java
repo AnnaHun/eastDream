@@ -30,8 +30,4 @@ public class loginServiceImpl implements loginService {
         User user = userMapper.selectUser(logName, password);
         return user;
     }
-
-    public String delUsers(User user) {
-        return "failed";
-    }
 }
